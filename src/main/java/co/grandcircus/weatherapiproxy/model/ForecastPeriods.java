@@ -7,7 +7,7 @@ public class ForecastPeriods {
     private String startTime;
     private String endTime;
     private Boolean isDaytime;
-    private int temperature;
+    private double temperature;
     private String temperatureUnit;
     // the type is not specified
     private String temperatureTrend;
@@ -16,7 +16,7 @@ public class ForecastPeriods {
     private String icon;
     private String shortForecast;
     private String detailedForecast;
-    private int temperatureCelsius;
+
 
     public int getNumber() {
         return number;
@@ -58,11 +58,11 @@ public class ForecastPeriods {
         this.isDaytime = isDaytime;
     }
 
-    public int getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 
@@ -122,13 +122,6 @@ public class ForecastPeriods {
         this.detailedForecast = detailedForecast;
     }
 
-    public int getTemperatureCelsius() {
-        return temperatureCelsius;
-    }
-
-    public void setTemperatureCelsius(int temperatureCelsius) {
-        this.temperatureCelsius = temperatureCelsius;
-    }
 
 
     public ForecastPeriods() {}
@@ -137,7 +130,7 @@ public class ForecastPeriods {
     public ForecastPeriods(int number, String name, String startTime, String endTime,
             Boolean isDaytime, int temperature, String temperatureUnit, String temperatureTrend,
             String windSpeed, String windDirection, String icon, String shortForecast,
-            String detailedForecast, int temperatureCelsius) {
+            String detailedForecast) {
         this.number = number;
         this.name = name;
         this.startTime = startTime;
@@ -151,7 +144,7 @@ public class ForecastPeriods {
         this.icon = icon;
         this.shortForecast = shortForecast;
         this.detailedForecast = detailedForecast;
-        this.temperatureCelsius = temperatureCelsius;
+
     }
 
 
@@ -160,9 +153,9 @@ public class ForecastPeriods {
         return "forecast [detailedForecast=" + detailedForecast + ", endTime=" + endTime + ", icon="
                 + icon + ", isDaytime=" + isDaytime + ", name=" + name + ", number=" + number
                 + ", shortForecast=" + shortForecast + ", startTime=" + startTime + ", temperature="
-                + temperature + ", temperatureCelsius=" + temperatureCelsius + ", temperatureTrend="
-                + temperatureTrend + ", temperatureUnit=" + temperatureUnit + ", windDirection="
-                + windDirection + ", windSpeed=" + windSpeed + "]";
+                + temperature + ", temperatureTrend=" + temperatureTrend + ", temperatureUnit="
+                + temperatureUnit + ", windDirection=" + windDirection + ", windSpeed=" + windSpeed
+                + "]";
     }
 
 

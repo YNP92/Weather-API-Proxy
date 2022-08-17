@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import co.grandcircus.weatherapiproxy.model.ForecastResponse;
 import co.grandcircus.weatherapiproxy.model.PointsResponse;
+import co.grandcircus.weatherapiproxy.model.ProxyResponse;
 
 @Service
 public class WeatherService {
@@ -21,6 +22,13 @@ public class WeatherService {
 
         ForecastResponse response = request
                 .getForObject(pointsResponse.getProperties().getForecast(), ForecastResponse.class);
+        return response;
+    }
+
+    public ProxyResponse proxyResponse(PointsResponse pointsResponse) {
+
+        ProxyResponse response = request.getForObject(pointsResponse.getProperties().getForecast(),
+                ProxyResponse.class);
         return response;
     }
 
